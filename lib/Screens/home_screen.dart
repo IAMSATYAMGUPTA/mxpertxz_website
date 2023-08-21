@@ -19,16 +19,32 @@ class _MyHomePageState extends State<MyHomePage> {
     "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZnVybml0dXJlfGVufDB8fDB8fHww&w=1000&q=80"
   ];
 
-  var oldWorkListImg = [
-    "https://cdn.pixabay.com/photo/2014/08/11/21/39/wall-416060_640.jpg",
-    "https://images.unsplash.com/photo-1669653862523-904e92ee90b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NHxBNVlaTDhaNzhjZ3x8ZW58MHx8fHx8&w=1000&q=80",
-    "https://media.istockphoto.com/id/1275104046/photo/modern-bathroom-interior-stock-photo.jpg?s=612x612&w=0&k=20&c=ztvVO5u7ZHiQU9KlQhl6ZZy_D-aXP-6ZhL4rg-q9fcA=",
-    "https://5.imimg.com/data5/SQ/LG/MY-16526586/study-room-interior-500x500.jpg",
-    "https://images.unsplash.com/photo-1539922980492-38f6673af8dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW9kdWxhciUyMGtpdGNoZW58ZW58MHx8MHx8fDA%3D&w=1000&q=80",
-    "https://www.orangetree.in/cdn/shop/articles/gallery-5_mazi_bedside_buy_online-scaled_1100x.jpg?v=1680845960"
+  List<Map<String,dynamic>> oldWorkListImg = [
+    {
+      'img' : "https://cdn.pixabay.com/photo/2014/08/11/21/39/wall-416060_640.jpg",
+      'isSelect' : false
+    },
+    {
+      'img' : "https://images.unsplash.com/photo-1669653862523-904e92ee90b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NHxBNVlaTDhaNzhjZ3x8ZW58MHx8fHx8&w=1000&q=80",
+      'isSelect' : false
+    },
+    {
+      'img' : "https://5.imimg.com/data5/SQ/LG/MY-16526586/study-room-interior-500x500.jpg",
+      'isSelect' : false
+    },
+    {
+      'img' : "https://media.istockphoto.com/id/1275104046/photo/modern-bathroom-interior-stock-photo.jpg?s=612x612&w=0&k=20&c=ztvVO5u7ZHiQU9KlQhl6ZZy_D-aXP-6ZhL4rg-q9fcA=",
+      'isSelect' : false
+    },
+    {
+      'img' : "https://images.unsplash.com/photo-1539922980492-38f6673af8dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW9kdWxhciUyMGtpdGNoZW58ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      'isSelect' : false
+    },
+    {
+      'img' : "https://www.orangetree.in/cdn/shop/articles/gallery-5_mazi_bedside_buy_online-scaled_1100x.jpg?v=1680845960",
+      'isSelect' : false
+    },
   ];
-
-
 
   int currentIndex = 0;
 
@@ -127,12 +143,12 @@ class _MyHomePageState extends State<MyHomePage> {
               spacing: 20,
               runSpacing: 20,
               children: [
-                WrapImages(images: oldWorkListImg[0]),
-                WrapImages(images: oldWorkListImg[1]),
-                WrapImages(images: oldWorkListImg[2]),
-                WrapImages(images: oldWorkListImg[3]),
-                WrapImages(images: oldWorkListImg[4]),
-                WrapImages(images: oldWorkListImg[5]),
+                WrapImages("Heaven View-Conteporary",images: oldWorkListImg[0]['img'],index: 0),
+                WrapImages("Newport Beach-Tuscon",images: oldWorkListImg[1]['img'],index: 1),
+                WrapImages("Orchard Newport Beach",images: oldWorkListImg[2]['img'],index: 2),
+                WrapImages("Crystal Cone Interior Design",images: oldWorkListImg[3]['img'],index: 3),
+                WrapImages("Lemon's Height Interior Design",images: oldWorkListImg[4]['img'],index: 4),
+                WrapImages("Pellican Hill Interior Design",images: oldWorkListImg[5]['img'],index: 5),
               ],
             ),
 
@@ -242,7 +258,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
 
-            SizedBox(height: 50,),
+            SizedBox(height: 90,),
 
             //------------------our Contact-------------------------
             Container(
@@ -318,13 +334,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       SizedBox(height: 20,),
                       Wrap(
                         children: [
-                          SizedBox(height: 20,),
-                          SizedBox(height: 30,child: Image.asset("asset/iconimages/facebook.jpg")),
                           SizedBox(width: 40,),
-                          SizedBox(height: 30,child: Image.asset("asset/iconimages/inta.jpg")),
-                          SizedBox(width: 40,),
+                          SizedBox(height: 30,child: Image.asset("asset/iconimages/facebook.png")),
+                          SizedBox(width: 60,),
+                          SizedBox(height: 30,child: Image.asset("asset/iconimages/inta.png")),
+                          SizedBox(width: 60,),
                           SizedBox(height: 30,child: Image.asset("asset/iconimages/twitter.png")),
-                          SizedBox(width: 40,),
+                          SizedBox(width: 60,),
                           SizedBox(height: 30,child: Image.asset("asset/iconimages/youtube.png")),
                         ]
                       )
@@ -334,7 +350,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                 ],
               ),
-            )
+            ),
 
           ],
         ),
@@ -342,12 +358,29 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget WrapImages({required String images}){
+  Widget WrapImages(String text,{required String images,required int index}){
     var _mediaQuerry = MediaQuery.of(context).size;
-    return SizedBox(
-      height: _mediaQuerry.width<=800.0 ? 550 : 150,
-      width: _mediaQuerry.width<=800.0 ? _mediaQuerry.width *0.95:180,
-      child: Image.network(images,fit: BoxFit.cover,),
+    return MouseRegion(
+      onEnter: (_) {
+        oldWorkListImg[index]['isSelect'] = true;
+        setState(() {
+
+        });
+      },
+      onExit: (_) {
+        oldWorkListImg[index]['isSelect'] = false;
+        setState(() {
+
+        });
+      },
+      child: SizedBox(
+        height: _mediaQuerry.width<=800.0 ? 550 : 150,
+        width: _mediaQuerry.width<=800.0 ? _mediaQuerry.width *0.95:180,
+        child: oldWorkListImg[index]['isSelect'] ? Container(height: double.infinity,width: double.infinity,
+            color: Colors.black,
+            child: Center(child: Text(text, style: TextStyle(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,))):
+        Image.network(images,fit: BoxFit.cover,),
+      )
     );
   }
 
